@@ -1,0 +1,49 @@
+{% extends 'app/base.html' %} {% block content %}
+<div class="container mt-3">
+  <h3>Hello, {{request.user}}!</h3>
+  <h5 class="mb-4">Here is the list of your friends:</h5>
+  <table class="table table-striped table-bordered mt-2">
+    <thead>
+      <tr>
+        <th scope="col">Alias</th>
+        {% if friends %}
+        <th scope="col" colspan="2">Actions</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for friend in friends %}
+      <tr>
+        <td>{{friend.username}}</td>
+        <td><a href="{% url 'user_detail' friend.id %}">View Profile</a></td>
+        <td>
+          <a href="{% url 'friend_remove' friend.id %}">Remove as Friend</a>
+        </td>
+      </tr>
+      {% empty %}
+      <td>You don't have any friends yet...</td>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h5 class="mt-4">Other users not in your friend list:</h5>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for friend in not_friends %}
+      <tr>
+        <td>
+          <a href="{% url 'user_detail' friend.id %}">{{friend.username}}</a>
+        </td>
+        <td><a href="{% url 'friend_add' friend.id %}">Add friend</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
