@@ -2,6 +2,8 @@
 
 Este es el código de fuente para la prueba de Coding Dojo. La demo desplegada en EC2 se encuentra aquí: http://3.14.246.206/
 
+El video de explicación está en YouTube: https://youtu.be/ccrKj_qHJFM
+
 ## Requerimientos
 
 Python 3.6+ y venv
