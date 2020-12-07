@@ -33,6 +33,13 @@ Python 3.6+ y venv
 
 ## Credenciales de prueba
 
+### Localmente
 Username: testme123
 
 Password: codingdojo123
+
+### En el servidor (link a EC2)
+
+Username: jackdoe123
+
+Password: codingdojo
