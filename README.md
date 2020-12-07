@@ -33,5 +33,5 @@ Python 3.6+ y venv
 
 ## Credenciales de prueba
 
-Username: jackdoe123
-Password: codingdojo
+Username: testme123
+Password: codingdojo123
